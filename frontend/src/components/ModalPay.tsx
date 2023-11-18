@@ -90,11 +90,16 @@ export const ModalPay = ({
       drinkId,
       10 // TODO: Change with drink_price
     );
+    // TODO: Add for DRINK_PRICE based on DRINK_ID -> SMART CONTRACT
     const signedTx = await signTx(rawTx);
     let response = await provider.sendTransaction(signedTx);
     setTxHash(response.hash);
     setIsFlowOngoing(false);
 
+    removeOrder();
+  };
+
+  const removeOrder = () => {
     // Removes first [handled] element from the array
     orders.shift();
     // Replaces array content
@@ -117,6 +122,16 @@ export const ModalPay = ({
       description={statusText}
     >
       <Image src="/touch-bracelet.png" alt="touch bracelet img" width={336} height={186} className='w-full' />
+      <button
+        onClick={() => {
+          removeOrder();
+          setIsOpen(false);
+          setIsFlowOngoing(false);
+        }}
+        className="px-4 py-2 border border-gray-700 text-gray-500 font-bold"
+      >
+        Cancel
+      </button>
     </ModalTemplate>
   );
 };
