@@ -6,4 +6,4 @@ COPY . .
 RUN npm ci
 
 # Define the command to run your app
-CMD ["npm", "run", "run"]
+CMD ["node", "index.js"]

@@ -8,3 +8,4 @@ services:
     volumes:
       - /sys/class/gpio/:/sys/class/gpio/:rw
     restart: unless-stopped
+    privileged: true
