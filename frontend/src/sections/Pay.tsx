@@ -75,9 +75,9 @@ export const Pay = () => {
           });
           setStep(1);
         }}
-        className="px-4 py-2 bg-red-500 text-white font-bold"
+        className="px-4 py-2 border border-gray-800 text-gray-600 font-bold w-52"
       >
-        Click here
+        Emergency Order
       </button>
 
       {step === 1 && isFlowOngoing && currentOrder && (

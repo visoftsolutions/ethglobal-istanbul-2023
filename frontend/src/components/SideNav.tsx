@@ -8,7 +8,7 @@ export const SideNav = () => {
   ];
 
   return (
-    <div className="w-[300px] bg-gray-900 h-screen flex flex-col py-16 px-4 gap-8">
+    <div className="w-[300px] bg-gray-900 h-screen flex flex-col py-16 px-4 gap-8 z-30">
       <h3 className="text-2xl font-bold">DEEP SHOT</h3>
 
       <div className="flex flex-col gap-2">
