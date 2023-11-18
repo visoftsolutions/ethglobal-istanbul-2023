@@ -20,11 +20,11 @@ export const getArbitrumNewEvents = async (supabase) => {
 }
 
 export const getScrollNewEvents = async (supabase) => {
-  return await getNewEvents(supabase, arbitrumTheGraphUrl, "scroll_events");
+  return await getNewEvents(supabase, scrollTheGraphUrl, "scroll_events");
 }
 
 export const getBaseNewEvents = async (supabase) => {
-  return await getNewEvents(supabase, arbitrumTheGraphUrl, "base_events");
+  return await getNewEvents(supabase, baseTheGraphUrl, "base_events");
 }
 
 export const getNewEvents = async (supabase, url, name) => {
@@ -79,7 +79,7 @@ export const getNewEvents = async (supabase, url, name) => {
   }));
 
   {
-    const { error } = await supabase.from("events").insert(x).select();
+    const { error } = await supabase.from(name).insert(x).select();
     console.error(error);
   }
 

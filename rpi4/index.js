@@ -4,7 +4,7 @@ import { LCD, Switch, Transistor, sleep } from "./utils.js";
 import { DeepShot, LcdContexts } from "./deepShot.js";
 import { createClient } from "@supabase/supabase-js";
 import { config } from "dotenv";
-import { getNewEvents } from "./subscriptions.js";
+import { getAllNewEvents, getNewEvents } from "./subscriptions.js";
 import { makeDrink } from "./makeDrink.js";
 config();
 
@@ -56,7 +56,7 @@ switch3.on("click", async () => {
 
 // Listen for events
 while (true) {
-  const events = await getNewEvents(supabase);
+  const events = await getAllNewEvents(supabase);
   console.log(`events: ${events}`);
   if (events.length !== 0) {
     const drinkId = events[0].drink_id;
