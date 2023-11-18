@@ -1,3 +1,5 @@
+import { Networks, Drinks } from "./makeDrink.js"
+
 export const LcdContexts = Object.freeze({
   Network: "network",
   Drink: "drink",
