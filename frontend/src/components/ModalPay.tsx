@@ -90,7 +90,7 @@ export const ModalPay = ({
       provider,
       Networks[networkId].address ?? "",
       drinkId,
-      parseEther("0.01").toNumber(), // TODO: Change with drink_price
+      parseEther("0.01"), // TODO: Change with drink_price
       Networks[networkId].chainId
     );
     // TODO: Add for DRINK_PRICE based on DRINK_ID -> SMART CONTRACT

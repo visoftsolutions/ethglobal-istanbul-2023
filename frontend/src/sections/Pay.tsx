@@ -68,7 +68,7 @@ export const Pay = () => {
           setIsOpen(true);
           setIsFlowOngoing(true);
           setCurrentOrder({
-            drink_id: 0,
+            drink_id: 3,
             network_id: 4,
             id: "123",
             created_at: "123",

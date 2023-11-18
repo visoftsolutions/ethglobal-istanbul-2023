@@ -64,7 +64,7 @@ export const Home = () => {
                   {Drinks[order.drink_id as keyof typeof Drinks].name}
                 </td>
                 <td className="p-2">
-                  {Networks[order.drink_id as keyof typeof Networks].name}
+                  {Networks[order.network_id as keyof typeof Networks].name}
                 </td>
               </tr>
             ))}

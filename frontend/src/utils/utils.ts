@@ -1,5 +1,5 @@
 import DeepShotAbi from "@/abi/DeepShot.json";
-import { UnsignedTransaction, ethers } from "ethers";
+import { BigNumberish, UnsignedTransaction, ethers } from "ethers";
 
 export interface Order {
   id: string;
@@ -12,7 +12,7 @@ export const getUnsignedTx = async (
   provider: ethers.providers.JsonRpcProvider,
   contractAddress: string,
   drink_id: number,
-  drink_price: number,
+  drink_price: BigNumberish,
   chain_id: number,
 ) => {
   const contract = new ethers.Contract(contractAddress, DeepShotAbi, provider);
