@@ -16,18 +16,66 @@ const DrinksDefinitions = {
   14: { 0: 1100, 1: 700, 2: 400 },
   15: { 0: 500, 1: 1000, 2: 1000 },
   16: { 0: 750, 1: 1250, 2: 500 },
-  17: { 0: 850, 1: 650, 2: 1000 }
+  17: { 0: 850, 1: 650, 2: 1000 },
 };
 
 export const Networks = Object.freeze({
-  1: { id: 1, name: "Gnosis", rpc: "https://1rpc.io/gnosis", address: '', chainId: 10200 },
-  2: { id: 2, name: "Arbitrum", rpc: "https://rpc.goerli.arbitrum.gateway.fm", address: '0xad83c78433c3720fcd9e034ab64ac496b2aa62a1', chainId: 421613 },
-  3: { id: 3, name: "Linea", rpc: `https://linea-goerli.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}`, address: '0xad83c78433c3720fcd9e034ab64ac496b2aa62a1', chainId: 59140 },
-  4: { id: 4, name: "zkSync", rpc: "https://testnet.era.zksync.dev", address: '0x999B33B6D84B427B67D4A3D3806A879a2c1f162e', chainId: 280 },
-  5: { id: 5, name: "Scroll", rpc: "http://scroll-sepolia-rpc.01no.de:8545", address: '0xa460ab650ea359a6bab7a7c1d2669389b124acb7', chainId: 534351 },
-  6: { id: 6, name: "Mantle", rpc: "https://rpc.testnet.mantle.xyz", address: '', chainId: 5001 },
-  7: { id: 7, name: "Celo", rpc: "https://alfajores-forno.celo-testnet.org", address: '', chainId: 44787 },
-  8: { id: 8, name: "Base", rpc: "wss://base-goerli.publicnode.com", address: '', chainId: 84531 }
+  1: {
+    id: 1,
+    name: "Gnosis",
+    rpc: "https://1rpc.io/gnosis",
+    address: "",
+    chainId: 10200,
+  },
+  2: {
+    id: 2,
+    name: "Arbitrum",
+    rpc: "https://rpc.goerli.arbitrum.gateway.fm",
+    address: "0xad83c78433c3720fcd9e034ab64ac496b2aa62a1",
+    chainId: 421613,
+  },
+  3: {
+    id: 3,
+    name: "Linea",
+    rpc: `https://linea-goerli.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}`,
+    address: "0xad83c78433c3720fcd9e034ab64ac496b2aa62a1",
+    chainId: 59140,
+  },
+  4: {
+    id: 4,
+    name: "zkSync",
+    rpc: "https://testnet.era.zksync.dev",
+    address: "0x999B33B6D84B427B67D4A3D3806A879a2c1f162e",
+    chainId: 280,
+  },
+  5: {
+    id: 5,
+    name: "Scroll",
+    rpc: "http://scroll-sepolia-rpc.01no.de:8545",
+    address: "0xa460ab650ea359a6bab7a7c1d2669389b124acb7",
+    chainId: 534351,
+  },
+  6: {
+    id: 6,
+    name: "Mantle",
+    rpc: "https://rpc.testnet.mantle.xyz",
+    address: "",
+    chainId: 5001,
+  },
+  7: {
+    id: 7,
+    name: "Celo",
+    rpc: "https://alfajores-forno.celo-testnet.org",
+    address: "",
+    chainId: 44787,
+  },
+  8: {
+    id: 8,
+    name: "Base",
+    rpc: "wss://base-goerli.publicnode.com",
+    address: "",
+    chainId: 84531,
+  },
 });
 
 export const Drinks = {
@@ -172,4 +220,3 @@ export const makeDrink = async (transistors, drinkId) => {
     }
   }
 };
-

@@ -60,7 +60,9 @@ while (true) {
   console.log(`events: ${events}`);
   if (events.length !== 0) {
     const drinkId = events[0].drink_id;
+    deepshot.switchContext(LcdContexts.RealizingOrder);
     await makeDrink(transistors, drinkId);
+    deepshot.switchContext(LcdContexts.Network);
   }
   await sleep(2000);
 }
