@@ -17,7 +17,6 @@ export const Pay = () => {
   const [currentOrder, setCurrentOrder] = useState<Order | undefined>();
 
   const [isOpen, setIsOpen] = useState(false);
-  
 
   // Handle upcoming orders
   useEffect(() => {

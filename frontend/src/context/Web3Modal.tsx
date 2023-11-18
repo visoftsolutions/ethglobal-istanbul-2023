@@ -11,7 +11,7 @@ import {
   scrollTestnet,
   mantleTestnet,
   celoAlfajores,
-  baseGoerli
+  baseGoerli,
 } from "viem/chains";
 
 const projectId = "f211fb976e1d3c00908cc3e7f86501d5";
@@ -23,7 +23,7 @@ const metadata = {
   icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
 
-const chains = [  
+const chains = [
   gnosisChiado,
   arbitrumGoerli,
   lineaTestnet,
@@ -31,7 +31,7 @@ const chains = [
   scrollTestnet,
   mantleTestnet,
   celoAlfajores,
-  baseGoerli
+  baseGoerli,
 ];
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
 

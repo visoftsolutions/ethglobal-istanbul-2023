@@ -60,8 +60,12 @@ export const Home = () => {
           <tbody>
             {orders.map((order, index) => (
               <tr key={index}>
-                <td className="p-2">{Drinks[order.drink_id as keyof typeof Drinks].name}</td>
-                <td className="p-2">{Networks[order.drink_id as keyof typeof Networks].name}</td>
+                <td className="p-2">
+                  {Drinks[order.drink_id as keyof typeof Drinks].name}
+                </td>
+                <td className="p-2">
+                  {Networks[order.drink_id as keyof typeof Networks].name}
+                </td>
               </tr>
             ))}
           </tbody>
