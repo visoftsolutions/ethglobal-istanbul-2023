@@ -5,7 +5,13 @@ import { ModalTemplate } from "./ModalTemplate";
 import { execHaloCmdWeb } from "@arx-research/libhalo/api/web.js";
 import { useEffect, useState } from "react";
 import { UnsignedTransaction, ethers } from "ethers";
-import { NetworkId, Networks, Order, getDrinkPrice, getUnsignedTx } from "@/utils/utils";
+import {
+  NetworkId,
+  Networks,
+  Order,
+  getDrinkPrice,
+  getUnsignedTx,
+} from "@/utils/utils";
 import { parseEther } from "ethers/lib/utils";
 
 interface Props {
@@ -27,7 +33,7 @@ export const ModalPay = ({
   orders,
   setOrders,
   networkId,
-  setStep
+  setStep,
 }: Props) => {
   const [statusText, setStatusText] = useState("");
   const [txHash, setTxHash] = useState("");
@@ -84,14 +90,14 @@ export const ModalPay = ({
 
   const buyDrink = async (drinkId: number, networkId: NetworkId) => {
     const provider = new ethers.providers.JsonRpcProvider(
-      Networks[networkId].rpc
+      Networks[networkId].rpc,
     );
     const rawTx = await getUnsignedTx(
       provider,
       Networks[networkId].address ?? "",
       drinkId,
       parseEther("0.01"), // TODO: Change with drink_price
-      Networks[networkId].chainId
+      Networks[networkId].chainId,
     );
     // TODO: Add for DRINK_PRICE based on DRINK_ID -> SMART CONTRACT
     const signedTx = await signTx(rawTx);

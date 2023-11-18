@@ -9,17 +9,12 @@ interface Props {
   setStep: any;
 }
 
-export const ModalPaySuccessful = ({
-  isOpen,
-  setIsOpen,
-  setStep
-}: Props) => {
+export const ModalPaySuccessful = ({ isOpen, setIsOpen, setStep }: Props) => {
   setTimeout(() => {
     setStep(1);
     setIsOpen(false);
   }, 3000);
 
-  
   return (
     <ModalTemplate
       isOpen={isOpen}

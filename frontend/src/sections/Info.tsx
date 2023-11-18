@@ -9,7 +9,7 @@ export const Info = () => {
   const NETWORK_ID = 4;
 
   const provider = new ethers.providers.JsonRpcProvider(
-    Networks[NETWORK_ID].rpc
+    Networks[NETWORK_ID].rpc,
   );
   const contract = new ethers.Contract(
     Networks[NETWORK_ID].address ?? "",
@@ -50,11 +50,11 @@ export const Info = () => {
                   <h3 className="text-lg font-semibold text-green-300">
                     {drink.name}
                   </h3>
-                  {prices[index] && 
+                  {prices[index] && (
                     <span className="uppercase px-2 py-1 bg-green-800/75 text-gray-300 text-sm">
                       {prices[index]}
                     </span>
-                  }
+                  )}
                 </div>
 
                 <p className="text-md text-gray-300 italic">

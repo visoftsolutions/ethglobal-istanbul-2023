@@ -41,7 +41,7 @@ export const Pay = () => {
   console.log(orders, !isFlowOngoing, currentOrder, step);
 
   useEffect(() => {
-    console.log('orders.length', orders.length);
+    console.log("orders.length", orders.length);
     if (orders.length > 0 && !isFlowOngoing) {
       setIsOpen(true);
       setIsFlowOngoing(true);
@@ -92,7 +92,13 @@ export const Pay = () => {
           setStep={setStep}
         />
       )}
-      {step === 2 && (<ModalPaySuccessful isOpen={isOpen} setIsOpen={setIsOpen} setStep={setStep} />)}
+      {step === 2 && (
+        <ModalPaySuccessful
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          setStep={setStep}
+        />
+      )}
     </div>
   );
 };
