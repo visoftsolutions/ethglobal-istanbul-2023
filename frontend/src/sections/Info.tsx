@@ -17,7 +17,7 @@ export const Info = () => {
 
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between">
-                  <h3 className="text-lg font-semibold">{drink.name}</h3>
+                  <h3 className="text-lg font-semibold text-green-300">{drink.name}</h3>
                   <span className="uppercase px-2 py-1 bg-green-800/75 text-gray-300 text-sm">{drink.price}</span>
                 </div>
 
