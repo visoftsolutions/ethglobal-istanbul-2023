@@ -5,5 +5,5 @@ services:
     build:
       context: ./
       dockerfile: dockerfile
-    ports:
-      - "0.0.0.0:8080:3000"
+    volumes:
+      - /sys/class/gpio/:/sys/class/gpio/:rw
