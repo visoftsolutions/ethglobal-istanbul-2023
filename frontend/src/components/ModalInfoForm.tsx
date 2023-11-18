@@ -37,7 +37,7 @@ export const ModalInfoForm = ({
   });
 
   const { data, sendTransactionAsync } = useSendTransaction();
- 
+
   const { isSuccess, error } = useWaitForTransaction({
     hash: data?.hash,
   });
@@ -96,10 +96,15 @@ export const ModalInfoForm = ({
             />
 
             <div className="flex">
-              {isSubmitting ?
-                <button className='w-full px-4 py-2 bg-green-500 text-white font-bold flex items-center justify-center h-12'><AiOutlineLoading3Quarters className='animate-spin' /></button>
-                :
-                <button className='w-full px-4 py-2 bg-green-500 text-white font-bold h-12 disabled:bg-gray-500 disabled:text-black'>Confirm</button>}
+              {isSubmitting ? (
+                <button className="w-full px-4 py-2 bg-green-500 text-white font-bold flex items-center justify-center h-12">
+                  <AiOutlineLoading3Quarters className="animate-spin" />
+                </button>
+              ) : (
+                <button className="w-full px-4 py-2 bg-green-500 text-white font-bold h-12 disabled:bg-gray-500 disabled:text-black">
+                  Confirm
+                </button>
+              )}
             </div>
             {error && <p>{error.message}</p>}
           </Form>

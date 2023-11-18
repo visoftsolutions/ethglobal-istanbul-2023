@@ -3,10 +3,7 @@ export const Info = () => {
     <main className="z-30">
       <h1 className="text-4xl font-bold">DRINKS!</h1>
 
-      <div className="">
-        
-      </div>
+      <div className=""></div>
     </main>
-    
   );
 };

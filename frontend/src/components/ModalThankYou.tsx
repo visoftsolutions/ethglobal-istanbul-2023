@@ -17,7 +17,12 @@ export const ModalThankYou = ({ isOpen, setIsOpen }: Props) => {
     >
       <>
         <span className="text-5xl mx-auto">🥳</span>
-        <button onClick={() => setIsOpen(false)} className='w-full px-4 py-2 bg-green-500 text-white font-bold h-12'>Finish!</button>
+        <button
+          onClick={() => setIsOpen(false)}
+          className="w-full px-4 py-2 bg-green-500 text-white font-bold h-12"
+        >
+          Finish!
+        </button>
       </>
     </ModalTemplate>
   );

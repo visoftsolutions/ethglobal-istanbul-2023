@@ -39,8 +39,19 @@ export const ModalBraceletConnect = ({
       description={braceletStatus}
     >
       <>
-        <Image src="/touch-bracelet.png" alt="touch bracelet img" width={336} height={186} className='w-full' />
-        <button onClick={async () => await handleChip()} className='w-full px-4 py-2 bg-green-500 text-white font-bold h-12'>Initiate bracelet connection</button>
+        <Image
+          src="/touch-bracelet.png"
+          alt="touch bracelet img"
+          width={336}
+          height={186}
+          className="w-full"
+        />
+        <button
+          onClick={async () => await handleChip()}
+          className="w-full px-4 py-2 bg-green-500 text-white font-bold h-12"
+        >
+          Initiate bracelet connection
+        </button>
       </>
     </ModalTemplate>
   );

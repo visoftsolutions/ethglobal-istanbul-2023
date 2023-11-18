@@ -40,13 +40,38 @@ export const Onboard = () => {
           </ul>
         </div>
       </div>
-      
-      <button onClick={async () => await open({ view: 'Networks' })} className='w-full px-4 py-2 bg-green-500 text-white font-bold h-12'>Start Configuration</button>
-        
-      {step === 1 && (<ModalBraceletConnect isOpen={isOpen} setIsOpen={setIsOpen} setBraceletWalletAddress={setBraceletWalletAddress} setStep={setStep} />)}
-      {step === 2 && (<ModalBraceletConnected isOpen={isOpen} setIsOpen={setIsOpen} setStep={setStep} />)}
-      {address && step === 3 && (<ModalInfoForm address={address} braceletAddress={braceletWalletAddress} isOpen={isOpen} setIsOpen={setIsOpen} />)}
-      {step === 4 && (<ModalThankYou isOpen={isOpen} setIsOpen={setIsOpen} />)}
+
+      <button
+        onClick={async () => await open({ view: "Networks" })}
+        className="w-full px-4 py-2 bg-green-500 text-white font-bold h-12"
+      >
+        Start Configuration
+      </button>
+
+      {step === 1 && (
+        <ModalBraceletConnect
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          setBraceletWalletAddress={setBraceletWalletAddress}
+          setStep={setStep}
+        />
+      )}
+      {step === 2 && (
+        <ModalBraceletConnected
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          setStep={setStep}
+        />
+      )}
+      {address && step === 3 && (
+        <ModalInfoForm
+          address={address}
+          braceletAddress={braceletWalletAddress}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+      )}
+      {step === 4 && <ModalThankYou isOpen={isOpen} setIsOpen={setIsOpen} />}
     </div>
   );
 };

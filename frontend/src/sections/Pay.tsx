@@ -38,12 +38,12 @@ export const Pay = () => {
   }, []);
 
   useEffect(() => {
-    if(orders.length > 0 && !isFlowOngoing) {
-      ;(async () => {
+    if (orders.length > 0 && !isFlowOngoing) {
+      async () => {
         setIsOpen(true);
         setIsFlowOngoing(true);
         setCurrentOrder(orders[0]);
-      });
+      };
     }
   }, [orders, isFlowOngoing]);
 
@@ -66,17 +66,27 @@ export const Pay = () => {
           setIsFlowOngoing(true);
           setCurrentOrder({
             drink_id: 1,
-            id: '123',
-            created_at: '123',
-            network: '123'
+            id: "123",
+            created_at: "123",
+            network: "123",
           });
         }}
         className="px-4 py-2 bg-red-500 text-white font-bold"
       >
         Click here
       </button>
-  
-      {isFlowOngoing && currentOrder && (<ModalPay setTxHash={setTxHash} isOpen={isOpen} setIsOpen={setIsOpen} drinkId={currentOrder?.drink_id} setIsFlowOngoing={setIsFlowOngoing} orders={orders} setOrders={setOrders} />)}
+
+      {isFlowOngoing && currentOrder && (
+        <ModalPay
+          setTxHash={setTxHash}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          drinkId={currentOrder?.drink_id}
+          setIsFlowOngoing={setIsFlowOngoing}
+          orders={orders}
+          setOrders={setOrders}
+        />
+      )}
       {/* {step === 2 && (<ModalBraceletConnected isOpen={isOpen} setIsOpen={setIsOpen} setStep={setStep} />)} */}
       {/* {address && step === 3 && (<ModalInfoForm address={address} braceletAddress={braceletWalletAddress} isOpen={isOpen} setIsOpen={setIsOpen} />)} */}
       {/* {step === 4 && (<ModalThankYou isOpen={isOpen} setIsOpen={setIsOpen} />)} */}

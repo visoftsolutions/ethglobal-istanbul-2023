@@ -4,7 +4,6 @@ import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-
 export const Home = () => {
   const supabase = createClient(
     "https://jshhojuqmzdfjaxvwqiw.supabase.co",

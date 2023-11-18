@@ -25,11 +25,10 @@ export const ModalPay = ({
   setIsFlowOngoing,
   orders,
   setOrders,
-  setTxHash
+  setTxHash,
 }: Props) => {
-  
   const [statusText, setStatusText] = useState("Tap the bracelet...");
-  
+
   async function handleChip(command: any) {
     try {
       // --- request NFC command execution ---
@@ -88,7 +87,7 @@ export const ModalPay = ({
       provider,
       process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ?? "",
       drinkId,
-      10 // TODO: Change with drink_price
+      10, // TODO: Change with drink_price
     );
     // TODO: Add for DRINK_PRICE based on DRINK_ID -> SMART CONTRACT
     const signedTx = await signTx(rawTx);
@@ -107,10 +106,10 @@ export const ModalPay = ({
   };
 
   useEffect(() => {
-    if(drinkId) {
-      ;(async () => {
+    if (drinkId) {
+      async () => {
         await buyDrink(drinkId);
-      });
+      };
     }
   }, [drinkId]);
 
@@ -121,7 +120,13 @@ export const ModalPay = ({
       title="Drink Payment"
       description={statusText}
     >
-      <Image src="/touch-bracelet.png" alt="touch bracelet img" width={336} height={186} className='w-full' />
+      <Image
+        src="/touch-bracelet.png"
+        alt="touch bracelet img"
+        width={336}
+        height={186}
+        className="w-full"
+      />
       <button
         onClick={() => {
           removeOrder();

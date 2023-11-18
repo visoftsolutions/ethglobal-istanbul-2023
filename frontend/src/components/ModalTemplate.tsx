@@ -22,7 +22,11 @@ export const ModalTemplate = ({
       <div className="fixed inset-0 bg-black/50 z-20" aria-hidden="true" />
 
       <div className="fixed inset-0 flex w-screen items-center justify-center p-4 z-30">
-        <Dialog.Panel className={"absolute bg-black p-4 w-full h-full items-center justify-center flex flex-col"}>
+        <Dialog.Panel
+          className={
+            "absolute bg-black p-4 w-full h-full items-center justify-center flex flex-col"
+          }
+        >
           <div className="w-full h-[400px]">
             <Dialog.Title className="flex justify-between text-xl font-semibold">
               {title}
