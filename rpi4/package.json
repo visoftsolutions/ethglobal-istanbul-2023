@@ -1,0 +1,38 @@
+{
+  "name": "eth-istanbul-2023",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "ETH Istanbul Hackaton",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "sudo node index.js",
+    "lint": "npx eslint .",
+    "fmt": "npx prettier . --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/visoftsolutions/eth-istanbul-2023.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/visoftsolutions/eth-istanbul-2023/issues"
+  },
+  "homepage": "https://github.com/visoftsolutions/eth-istanbul-2023#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.4",
+    "dotenv": "^16.3.1",
+    "lcd": "^3.1.1",
+    "onoff": "^6.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.3.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "3.1.0"
+  }
+}

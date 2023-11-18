@@ -1,0 +1,6 @@
+# .graphclientrc.yml
+sources:
+  - name: zksync
+    handler:
+      graphql:
+        endpoint: https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.1
