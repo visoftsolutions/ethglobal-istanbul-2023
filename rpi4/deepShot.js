@@ -1,19 +1,19 @@
 const Networks = Object.freeze({
-  Ethereum: { id: 1, name: "Ethereum" },
-  Arbitrum: { id: 2, name: "Arbitrum" },
-  ZkSync: { id: 3, name: "ZkSync" },
-  Celo: { id: 4, name: "Celo" },
-  Cartesi: { id: 5, name: "Cartesi" },
-  Gnosis: { id: 6, name: "Gnosis" },
+  1: { id: 1, name: "Ethereum" },
+  2: { id: 2, name: "Arbitrum" },
+  3: { id: 3, name: "ZkSync" },
+  4: { id: 4, name: "Celo" },
+  5: { id: 5, name: "Cartesi" },
+  6: { id: 6, name: "Gnosis" },
 });
 
 const Drinks = Object.freeze({
-  RedSun: { id: 1, name: "RedSun" }, // Vodka, cranberry juice
-  SkyHigh: { id: 2, name: "SkyHigh" }, // Vodka, blueberry juice
-  GoldRush: { id: 3, name: "GoldRush" }, // Whisky, orange juice
-  Frostbite: { id: 4, name: "Frostbite" }, // Vodka, grape juice
-  OakSour: { id: 5, name: "OakSour" }, // Whisky, lemon juice
-  ZenMix: { id: 6, name: "ZenMix" }, // Vodka, apple juice
+  1: { id: 1, name: "RedSun" },
+  2: { id: 2, name: "SkyHigh" },
+  3: { id: 3, name: "GoldRush" },
+  4: { id: 4, name: "Frostbite" },
+  5: { id: 5, name: "OakSour" },
+  6: { id: 6, name: "ZenMix" },
 });
 
 export const LcdContexts = Object.freeze({
@@ -35,8 +35,8 @@ export class DeepShot {
   constructor(screen) {
     this.screen = screen;
     this.context = LcdContexts.Network;
-    this.network = Networks.Arbitrum;
-    this.drink = Drinks.Frostbite;
+    this.network = Networks[1];
+    this.drink = Drinks[1];
     this.realizingOrderDescription = "";
 
     // Proxy to handle property updates and screen refresh

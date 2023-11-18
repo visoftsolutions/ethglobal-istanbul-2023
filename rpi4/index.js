@@ -1,12 +1,10 @@
 import { Gpio } from "onoff";
 import Lcd from "lcd";
-import { LCD, Switch } from "./utils.js";
+import { LCD, Switch, Transistor, sleep } from "./utils.js";
 import { DeepShot, LcdContexts } from "./deepShot.js";
 import { createClient } from "@supabase/supabase-js";
-import { Transistor } from "./utils.js";
 import { config } from "dotenv";
-import { getNewEvents } from "./subscriptions.js"
-import { sleep } from "./utils.js";
+import { getNewEvents } from "./subscriptions.js";
 import { makeDrink } from "./makeDrink.js";
 config();
 
@@ -15,7 +13,7 @@ const supabase = createClient(
   process.env.SUPABASE_APIKEY ?? "",
 );
 
-let transistors = [
+const transistors = [
   new Transistor(new Gpio(16, "out")),
   new Transistor(new Gpio(20, "out")),
   new Transistor(new Gpio(21, "out")),
@@ -58,9 +56,9 @@ switch3.on("click", async () => {
 
 // Listen for events
 while (true) {
-  let events = await getNewEvents(supabase);
+  const events = await getNewEvents(supabase);
   console.log(`events: ${events}`);
-  if (events.length != 0) {
+  if (events.length !== 0) {
     const drinkId = events[0].drinkId;
     await makeDrink(transistors, drinkId);
   }

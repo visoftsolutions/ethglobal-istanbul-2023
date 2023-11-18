@@ -6,7 +6,7 @@ export const getNewEvents = async (supabase) => {
     .limit(1);
   console.error(error);
 
-  const blockNumber = (data && data[0] && data[0]["block_number"]) || 0;
+  const blockNumber = (data && data[0] && data[0].block_number) || 0;
   console.log(blockNumber);
 
   const graphqlQuery = {
@@ -24,7 +24,7 @@ export const getNewEvents = async (supabase) => {
     `,
   };
 
-  let response = await fetch(
+  const response = await fetch(
     "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.1",
     {
       method: "POST",
@@ -32,15 +32,15 @@ export const getNewEvents = async (supabase) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(graphqlQuery),
-    }
+    },
   ).then((response) => {
     return response.json();
   });
 
-  let events = response["data"]["drinkPurchaseds"];
+  const events = response.data.drinkPurchaseds;
   console.log(events);
 
-  let x = events.map((x) => ({
+  const x = events.map((x) => ({
     block_number: parseFloat(x.blockNumber),
     block_timestamp: parseFloat(x.blockTimestamp),
     drink_id: parseFloat(x.drinkId),
@@ -50,7 +50,7 @@ export const getNewEvents = async (supabase) => {
   }));
 
   {
-    let { error } = await supabase.from("events").insert(x).select();
+    const { error } = await supabase.from("events").insert(x).select();
     console.error(error);
   }
 
