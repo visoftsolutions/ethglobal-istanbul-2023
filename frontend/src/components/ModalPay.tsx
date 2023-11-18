@@ -5,7 +5,8 @@ import { ModalTemplate } from "./ModalTemplate";
 import { execHaloCmdWeb } from "@arx-research/libhalo/api/web.js";
 import { useEffect, useState } from "react";
 import { UnsignedTransaction, ethers } from "ethers";
-import { NetworkId, Networks, Order, getUnsignedTx } from "@/utils/utils";
+import { NetworkId, Networks, Order, getDrinkPrice, getUnsignedTx } from "@/utils/utils";
+import { parseEther } from "ethers/lib/utils";
 
 interface Props {
   isOpen: boolean;
@@ -87,7 +88,7 @@ export const ModalPay = ({
       provider,
       Networks[networkId].address ?? "",
       drinkId,
-      1000, // TODO: Change with drink_price
+      parseEther("0.01").toNumber(), // TODO: Change with drink_price
     );
     // TODO: Add for DRINK_PRICE based on DRINK_ID -> SMART CONTRACT
     const signedTx = await signTx(rawTx);
