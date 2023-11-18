@@ -4,10 +4,14 @@ import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
 
 import { WagmiConfig } from "wagmi";
 import {
-  goerli,
-  zkSyncTestnet,
   gnosisChiado,
   arbitrumGoerli,
+  lineaTestnet,
+  zkSyncTestnet,
+  scrollTestnet,
+  mantleTestnet,
+  celoAlfajores,
+  baseGoerli
 } from "viem/chains";
 
 const projectId = "f211fb976e1d3c00908cc3e7f86501d5";
@@ -19,7 +23,16 @@ const metadata = {
   icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
 
-const chains = [goerli, zkSyncTestnet, gnosisChiado, arbitrumGoerli];
+const chains = [  
+  gnosisChiado,
+  arbitrumGoerli,
+  lineaTestnet,
+  zkSyncTestnet,
+  scrollTestnet,
+  mantleTestnet,
+  celoAlfajores,
+  baseGoerli
+];
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
 
 // 3. Create modal
