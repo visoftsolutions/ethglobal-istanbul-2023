@@ -31,7 +31,7 @@ const config: HardhatUserConfig = {
           ? [process.env.WALLET_PRIVATE_KEY]
           : [],
     },
-  },n
+  },
 };
 
 export default config;
