@@ -38,4 +38,10 @@ export const getUnsignedTx = async (
   return tx;
 };
 
-
+export const getDrinkPrice = async (
+  contract: ethers.Contract,
+  drinkId: number,
+) => {
+  const value = await contract.menu([drinkId])
+  return ethers.utils.formatEther(value)
+}
