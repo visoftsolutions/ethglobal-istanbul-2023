@@ -108,7 +108,7 @@ export const ModalPay = ({
   };
 
   useEffect(() => {
-    if (drinkId) {
+    if (drinkId !== undefined) {
       (async () => {
         await buyDrink(drinkId, networkId);
       })();

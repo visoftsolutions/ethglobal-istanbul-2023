@@ -1,24 +1,3 @@
-export const Networks = Object.freeze({
-  1: { id: 1, name: "Gnosis" },
-  2: { id: 2, name: "Arbitrum" },
-  3: { id: 3, name: "Linea" },
-  4: { id: 4, name: "zkSync" },
-  5: { id: 5, name: "Scroll" },
-  6: { id: 6, name: "Mantle" },
-  7: { id: 7, name: "Celo" },
-  8: { id: 8, name: "Base" },
-  9: { id: 9, name: "Cartesi" },
-});
-
-export const Drinks = Object.freeze({
-  1: { id: 1, name: "ZkShot", description: "ZkShot – a harmony of flavors! A refreshing blend of vodka, lemon juice, and agave syrup, symbolizing the speed and efficiency of zkSync. Perfect for those seeking harmony and modernity."},
-  2: { id: 2, name: "BrainZero", description: "BrainZero - lots of alcohol"},
-  3: { id: 3, name: "MantlTaste", description: "MantlTaste – a union of forces! A surprising mix of rum, coconut, and lime, reflecting the complexity and strength of Mantle Network. A magical journey through the world of modern technologies."},
-  4: { id: 4, name: "API3zzy", description: "API3zzy – taste new possibilities! A sophisticated composition of Aperol, soda, and orange peel, representing the versatility and adaptability of API3. Perfect for starting an evening full of discoveries."},
-  5: { id: 5, name: "ArxTwist", description: "ArxTwist – journey into the unknown! A unique mix of whisky, blackberry juice, and mint, symbolizing the courage and exploration of Arx. A cocktail for the bold who are not afraid of new challenges."},
-  6: { id: 6, name: "Celozzle", description: "Celozzle – celebrate every moment! A cheerful combination of prosecco, peach juice, and raspberries, symbolizing the joy and openness of Celo. The perfect drink for any occasion when you want to celebrate with class."},
-});
-
 export const LcdContexts = Object.freeze({
   Network: "network",
   Drink: "drink",
