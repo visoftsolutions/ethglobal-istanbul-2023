@@ -3,7 +3,6 @@ import Image from "next/image";
 import { ModalTemplate } from "./ModalTemplate";
 
 import { execHaloCmdWeb } from "@arx-research/libhalo/api/web.js";
-import { haloConvertSignature } from "@arx-research/libhalo/api/common.js";
 import { useEffect, useState } from "react";
 import { UnsignedTransaction, ethers } from "ethers";
 import { NetworkId, Networks, Order, getUnsignedTx } from "@/utils/utils";
@@ -86,7 +85,7 @@ export const ModalPay = ({
     );
     const rawTx = await getUnsignedTx(
       provider,
-      process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ?? "",
+      Networks[networkId].address ?? "",
       drinkId,
       10, // TODO: Change with drink_price
     );

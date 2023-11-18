@@ -1,4 +1,4 @@
-import { Drinks, getDrinkPrice } from "@/utils/utils";
+import { Drinks, Networks, getDrinkPrice } from "@/utils/utils";
 import { ethers } from "ethers";
 import Image from "next/image";
 import { CgScrollV } from "react-icons/cg";
@@ -6,11 +6,13 @@ import DeepShotAbi from "@/abi/DeepShot.json";
 import { useEffect, useState } from "react";
 
 export const Info = () => {
+  const NETWORK_ID = 4;
+
   const provider = new ethers.providers.JsonRpcProvider(
-    "https://testnet.era.zksync.dev",
+    Networks[NETWORK_ID].rpc
   );
   const contract = new ethers.Contract(
-    process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ?? "",
+    Networks[NETWORK_ID].address ?? "",
     DeepShotAbi,
     provider,
   );
