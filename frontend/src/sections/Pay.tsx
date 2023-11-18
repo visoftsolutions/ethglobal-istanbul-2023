@@ -2,14 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { Order } from "@/utils/utils";
-import { createClient } from "@supabase/supabase-js";
 import { ModalPay } from "@/components/ModalPay";
 import { ModalPaySuccessful } from "@/components/ModalPaySuccessful";
-
-const supabase = createClient(
-  "https://jshhojuqmzdfjaxvwqiw.supabase.co",
-  process.env.NEXT_PUBLIC_SUPABASE_APIKEY ?? "",
-);
+import { supabase } from "@/utils/supabase";
 
 export const Pay = () => {
   const [orders, setOrders] = useState<Order[]>([]);
@@ -52,16 +47,7 @@ export const Pay = () => {
 
   return (
     <div className="flex flex-col h-[80vh] gap-8 items-center justify-center px-4 z-10 text-gray-300">
-      <div className="flex flex-col gap-4">
-        <h1 className="text-2xl font-bold">Waiting for orders...</h1>
-
-        {/* <div>
-          <p className="text-md">
-            Logs: {statusText}
-            TxHash: {stateResp}
-          </p>
-        </div> */}
-      </div>
+      <h1 className="text-2xl font-bold">Waiting for orders...</h1>
 
       <button
         onClick={() => {

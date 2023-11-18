@@ -1,8 +1,7 @@
 import { ModalTemplate } from "./ModalTemplate";
 import { Input } from "./Input";
 import { useState } from "react";
-import { Select } from "./Select";
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "@/utils/supabase";
 import * as Yup from "yup";
 import { Formik, Form, useFormikContext } from "formik";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
@@ -19,11 +18,6 @@ interface Props {
   address: string;
   braceletAddress: string;
 }
-
-const supabase = createClient(
-  "https://jshhojuqmzdfjaxvwqiw.supabase.co",
-  process.env.NEXT_PUBLIC_SUPABASE_APIKEY ?? "",
-);
 
 export const ModalInfoForm = ({
   isOpen,
