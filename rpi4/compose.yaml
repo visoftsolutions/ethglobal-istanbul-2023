@@ -1,9 +1,10 @@
 version: "3.8"
 
 services:
-  pay-app:
+  rpi4-degendrink-app:
     build:
       context: ./
       dockerfile: dockerfile
     volumes:
       - /sys/class/gpio/:/sys/class/gpio/:rw
+    restart: unless-stopped
