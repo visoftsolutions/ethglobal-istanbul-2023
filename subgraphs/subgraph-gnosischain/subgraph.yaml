@@ -1,0 +1,30 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: DeepShot
+    network: arbitrum-sepolia
+    source:
+      address: "0xad83c78433c3720fcd9e034ab64ac496b2aa62a1"
+      abi: DeepShot
+      startBlock: 1234892
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - DrinkPriceUpdated
+        - DrinkPurchased
+        - OwnershipTransferred
+      abis:
+        - name: DeepShot
+          file: ./abis/DeepShot.json
+      eventHandlers:
+        - event: DrinkPriceUpdated(uint256,uint256)
+          handler: handleDrinkPriceUpdated
+        - event: DrinkPurchased(address,uint256)
+          handler: handleDrinkPurchased
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/deep-shot.ts

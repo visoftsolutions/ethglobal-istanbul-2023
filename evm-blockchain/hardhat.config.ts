@@ -27,9 +27,9 @@ const config: HardhatUserConfig = {
           : [],
     },
 
-    arbitrumGoerli: {
-      url: "https://goerli-rollup.arbitrum.io/rpc",
-      chainId: 421613,
+    arbitrumSepolia: {
+      url: "https://sepolia-rollup.arbitrum.io/rpc",
+      chainId: 421614,
       accounts:
         process.env.WALLET_PRIVATE_KEY !== undefined
           ? [process.env.WALLET_PRIVATE_KEY]
@@ -37,7 +37,7 @@ const config: HardhatUserConfig = {
     },
 
     lineaGoerli: {
-      url: "https://linea-goerli.infura.io/v3/",
+      url: "https://linea-goerli.infura.io/v3/dfc465b6629b41e5b98e6d2baf6792f3",
       chainId: 59140,
       accounts:
         process.env.WALLET_PRIVATE_KEY !== undefined

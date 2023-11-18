@@ -1,0 +1,8 @@
+{
+  "arbitrum-sepolia": {
+    "DeepShot": {
+      "address": "0xad83c78433c3720fcd9e034ab64ac496b2aa62a1",
+      "startBlock": 1234892
+    }
+  }
+}
