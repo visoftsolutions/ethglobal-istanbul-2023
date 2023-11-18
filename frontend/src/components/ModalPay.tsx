@@ -91,12 +91,12 @@ export const ModalPay = ({
     );
     // TODO: Add for DRINK_PRICE based on DRINK_ID -> SMART CONTRACT
     const signedTx = await signTx(rawTx);
-    let response = await provider.sendTransaction(signedTx);
+    const response = await provider.sendTransaction(signedTx);
     setTxHash(response.hash);
     setTimeout(() => {
       setIsFlowOngoing(false);
       removeOrder();
-    }, 3000);
+    }, 5000);
   };
 
   const removeOrder = () => {

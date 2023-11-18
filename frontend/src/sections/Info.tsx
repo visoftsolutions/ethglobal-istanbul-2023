@@ -22,7 +22,7 @@ export const Info = () => {
   useEffect(() => {
     (async () => {
       for (let [_, value] of Object.entries(Drinks)) {
-        const price = (await getDrinkPrice(contract, value.id)) + "ETH";
+        const price = (await getDrinkPrice(contract, value.id)) + " ETH";
         console.log(price);
         setPrices((prev) => [...prev, price]);
       }

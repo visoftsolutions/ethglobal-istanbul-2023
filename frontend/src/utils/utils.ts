@@ -42,14 +42,14 @@ export const getDrinkPrice = async (
 export type NetworkId = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 export const Networks = Object.freeze({
-  1: { id: 1, name: "Gnosis", rpc: "https://1rpc.io/gnosis", address: '' },
-  2: { id: 2, name: "Arbitrum", rpc: "https://rpc.goerli.arbitrum.gateway.fm", address: '' },
-  3: { id: 3, name: "Linea", rpc: `https://linea-goerli.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}`, address: '' },
-  4: { id: 4, name: "zkSync", rpc: "https://testnet.era.zksync.dev", address: '0xb2A1363901Df55409f901B47A30b31Bd2A63E5F7' },
-  5: { id: 5, name: "Scroll", rpc: "http://scroll-sepolia-rpc.01no.de:8545", address: '' },
-  6: { id: 6, name: "Mantle", rpc: "https://rpc.testnet.mantle.xyz", address: '' },
-  7: { id: 7, name: "Celo", rpc: "https://alfajores-forno.celo-testnet.org", address: '' },
-  8: { id: 8, name: "Base", rpc: "wss://base-goerli.publicnode.com", address: '' }
+  1: { id: 1, name: "Gnosis", rpc: "https://1rpc.io/gnosis", address: '', chainId: 10200 },
+  2: { id: 2, name: "Arbitrum", rpc: "https://rpc.goerli.arbitrum.gateway.fm", address: '', chainId: 421613 },
+  3: { id: 3, name: "Linea", rpc: `https://linea-goerli.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}`, address: '', chainId: 59140 },
+  4: { id: 4, name: "zkSync", rpc: "https://testnet.era.zksync.dev", address: '0xb2A1363901Df55409f901B47A30b31Bd2A63E5F7', chainId: 280 },
+  5: { id: 5, name: "Scroll", rpc: "http://scroll-sepolia-rpc.01no.de:8545", address: '', chainId: 534351 },
+  6: { id: 6, name: "Mantle", rpc: "https://rpc.testnet.mantle.xyz", address: '', chainId: 5001 },
+  7: { id: 7, name: "Celo", rpc: "https://alfajores-forno.celo-testnet.org", address: '', chainId: 44787 },
+  8: { id: 8, name: "Base", rpc: "wss://base-goerli.publicnode.com", address: '', chainId: 84531 }
 });
 
 export const Drinks = {
