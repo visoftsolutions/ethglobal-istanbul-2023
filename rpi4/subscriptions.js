@@ -25,7 +25,7 @@ export const getNewEvents = async (supabase) => {
   };
 
   const response = await fetch(
-    "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.1",
+    "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2",
     {
       method: "POST",
       headers: {

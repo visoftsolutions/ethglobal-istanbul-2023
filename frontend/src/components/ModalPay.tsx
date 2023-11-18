@@ -89,6 +89,7 @@ export const ModalPay = ({
       Networks[networkId].address ?? "",
       drinkId,
       parseEther("0.01").toNumber(), // TODO: Change with drink_price
+      Networks[networkId].chainId
     );
     // TODO: Add for DRINK_PRICE based on DRINK_ID -> SMART CONTRACT
     const signedTx = await signTx(rawTx);

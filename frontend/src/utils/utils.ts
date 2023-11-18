@@ -13,6 +13,7 @@ export const getUnsignedTx = async (
   contractAddress: string,
   drink_id: number,
   drink_price: number,
+  chain_id: number,
 ) => {
   const contract = new ethers.Contract(contractAddress, DeepShotAbi, provider);
   const data = contract.interface.encodeFunctionData("buy", [BigInt(drink_id)]);
@@ -26,7 +27,7 @@ export const getUnsignedTx = async (
     value: drink_price,
     data,
     nonce,
-    chainId: 280,
+    chainId: chain_id,
   };
   return tx;
 };
