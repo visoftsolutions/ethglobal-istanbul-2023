@@ -17,7 +17,7 @@ export const Pay = () => {
   const [currentOrder, setCurrentOrder] = useState<Order | undefined>();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [txHash, setTxHash] = useState();
+  
 
   // Handle upcoming orders
   useEffect(() => {
@@ -48,7 +48,7 @@ export const Pay = () => {
   }, [orders, isFlowOngoing]);
 
   return (
-    <div className="flex flex-col h-[80vh] gap-8 items-center justify-center px-4 z-10">
+    <div className="flex flex-col h-[80vh] gap-8 items-center justify-center px-4 z-10 text-gray-300">
       <div className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold">Waiting for orders...</h1>
 
@@ -65,10 +65,10 @@ export const Pay = () => {
           setIsOpen(true);
           setIsFlowOngoing(true);
           setCurrentOrder({
-            drink_id: 0,
+            drink_id: 1,
+            network_id: 0,
             id: "123",
             created_at: "123",
-            network_id: 0,
           });
         }}
         className="px-4 py-2 bg-red-500 text-white font-bold"
@@ -78,7 +78,6 @@ export const Pay = () => {
 
       {isFlowOngoing && currentOrder && (
         <ModalPay
-          setTxHash={setTxHash}
           isOpen={isOpen}
           setIsOpen={setIsOpen}
           drinkId={currentOrder?.drink_id}

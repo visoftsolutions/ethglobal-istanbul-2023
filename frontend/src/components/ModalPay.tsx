@@ -15,7 +15,6 @@ interface Props {
   setIsFlowOngoing: any;
   orders: Order[];
   setOrders: any;
-  setTxHash: any;
 }
 
 export const ModalPay = ({
@@ -25,9 +24,9 @@ export const ModalPay = ({
   setIsFlowOngoing,
   orders,
   setOrders,
-  setTxHash,
 }: Props) => {
-  const [statusText, setStatusText] = useState("Tap the bracelet...");
+  const [statusText, setStatusText] = useState("");
+  const [txHash, setTxHash] = useState("");
 
   async function handleChip(command: any) {
     try {
@@ -93,9 +92,10 @@ export const ModalPay = ({
     const signedTx = await signTx(rawTx);
     let response = await provider.sendTransaction(signedTx);
     setTxHash(response.hash);
-    setIsFlowOngoing(false);
-
-    removeOrder();
+    setTimeout(() => {
+      setIsFlowOngoing(false);
+      removeOrder();
+    }, 3000);
   };
 
   const removeOrder = () => {
@@ -107,9 +107,9 @@ export const ModalPay = ({
 
   useEffect(() => {
     if (drinkId) {
-      async () => {
+      (async () => {
         await buyDrink(drinkId);
-      };
+      })();
     }
   }, [drinkId]);
 
@@ -120,6 +120,7 @@ export const ModalPay = ({
       title="Drink Payment"
       description={statusText}
     >
+      <div className={"text-sm text-gray-300"}>{txHash}</div>
       <Image
         src="/touch-bracelet.png"
         alt="touch bracelet img"
