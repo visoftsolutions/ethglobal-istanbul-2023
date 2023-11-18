@@ -65,10 +65,10 @@ export const Pay = () => {
           setIsOpen(true);
           setIsFlowOngoing(true);
           setCurrentOrder({
-            drink_id: 1,
+            drink_id: 0,
             id: "123",
             created_at: "123",
-            network: "123",
+            network_id: 0,
           });
         }}
         className="px-4 py-2 bg-red-500 text-white font-bold"

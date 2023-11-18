@@ -5,7 +5,7 @@ export interface Order {
   id: string;
   created_at: string;
   drink_id: number;
-  network: string;
+  network_id: number;
 }
 
 export const getUnsignedTx = async (

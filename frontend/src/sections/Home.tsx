@@ -1,5 +1,5 @@
 "use client";
-import { Order } from "@/utils/utils";
+import { Drinks, Networks, Order } from "@/utils/utils";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -60,8 +60,8 @@ export const Home = () => {
           <tbody>
             {orders.map((order, index) => (
               <tr key={index}>
-                <td className="p-2">{order.drink}</td>
-                <td className="p-2">{order.network}</td>
+                <td className="p-2">{Drinks[order.drink_id as keyof typeof Drinks].name}</td>
+                <td className="p-2">{Networks[order.drink_id as keyof typeof Networks].name}</td>
               </tr>
             ))}
           </tbody>
