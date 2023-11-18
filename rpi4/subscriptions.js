@@ -1,13 +1,35 @@
 export const zksyncTheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2";
-export const arbitrumTheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2";
-export const TheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2";
-export const scrollTheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2";
-export const baseTheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2";
+export const arbitrumTheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-arbitrumsepolia/v0.0.1";
+export const scrollTheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-scroll/v0.0.1";
+export const baseTheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-base/v0.0.1";
 
+export const getAllNewEvents = async (supabase) => {
+  const zksyncEvents = await getZksyncNewEvents(supabase);
+  const arbitrumEvents = await getArbitrumNewEvents(supabase);
+  const scrollEvents = await getScrollNewEvents(supabase);
+  const baseEvents = await getBaseNewEvents(supabase);
+  return [].concat(zksyncEvents, arbitrumEvents, scrollEvents, baseEvents);
+}
 
-export const getNewEvents = async (supabase) => {
+export const getZksyncNewEvents = async (supabase) => {
+  return await getNewEvents(supabase, zksyncTheGraphUrl, "zksync_events");
+}
+
+export const getArbitrumNewEvents = async (supabase) => {
+  return await getNewEvents(supabase, arbitrumTheGraphUrl, "arbitrum_events");
+}
+
+export const getScrollNewEvents = async (supabase) => {
+  return await getNewEvents(supabase, arbitrumTheGraphUrl, "scroll_events");
+}
+
+export const getBaseNewEvents = async (supabase) => {
+  return await getNewEvents(supabase, arbitrumTheGraphUrl, "base_events");
+}
+
+export const getNewEvents = async (supabase, url, name) => {
   const { data, error } = await supabase
-    .from("events")
+    .from(name)
     .select("block_number")
     .order("block_number", { ascending: false })
     .limit(1);
@@ -32,7 +54,7 @@ export const getNewEvents = async (supabase) => {
   };
 
   const response = await fetch(
-    "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2",
+    url,
     {
       method: "POST",
       headers: {
