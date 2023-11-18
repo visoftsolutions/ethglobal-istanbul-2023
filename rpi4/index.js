@@ -59,7 +59,7 @@ while (true) {
   const events = await getNewEvents(supabase);
   console.log(`events: ${events}`);
   if (events.length !== 0) {
-    const drinkId = events[0].drinkId;
+    const drinkId = events[0].drink_id;
     await makeDrink(transistors, drinkId);
   }
   await sleep(2000);

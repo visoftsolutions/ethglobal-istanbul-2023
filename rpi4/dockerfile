@@ -1,0 +1,9 @@
+# Stage 1: Building the application
+FROM node AS builder
+WORKDIR /app
+COPY . .
+
+RUN npm ci
+
+# Define the command to run your app
+CMD ["npm", "run", "run"]
