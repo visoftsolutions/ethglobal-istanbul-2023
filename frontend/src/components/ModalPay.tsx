@@ -87,7 +87,7 @@ export const ModalPay = ({
       provider,
       Networks[networkId].address ?? "",
       drinkId,
-      10, // TODO: Change with drink_price
+      1000, // TODO: Change with drink_price
     );
     // TODO: Add for DRINK_PRICE based on DRINK_ID -> SMART CONTRACT
     const signedTx = await signTx(rawTx);
@@ -123,7 +123,7 @@ export const ModalPay = ({
     >
       <div className={"text-sm text-gray-300"}>{txHash}</div>
       <Image
-        src="/touch.png"
+        src="/touch.jpg"
         alt="touch bracelet img"
         width={336}
         height={186}
