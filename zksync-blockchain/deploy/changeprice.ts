@@ -9,9 +9,7 @@ dotenv.config();
 export default async function () {
   // Address of the contract to interact with
   const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
-  const ITEM_ID = process.env.ITEM_ID;
-  const PRICE = process.env.PRICE;
-  if (!CONTRACT_ADDRESS || !ITEM_ID || !PRICE) {
+  if (!CONTRACT_ADDRESS) {
     throw "⛔️ Provide address of the contract to interact with, item id and price!";
   }
 
@@ -27,16 +25,11 @@ export default async function () {
     getWallet() // Interact with the contract on behalf of this wallet
   );
 
-  let response: any;
-
-  // Run contract read function to display current price
-  response = await contract.menu(ITEM_ID);
-  console.log(`Current price for item ${ITEM_ID} is: ${response}`);
-
-  // Set new drink price
-  response = await contract.setDrinkPrice(ITEM_ID, PRICE);
-
-  // Run contract read function to display updated price
-  response = await contract.menu(ITEM_ID);
-  console.log(`Updated price for item ${ITEM_ID} is: ${response}`);
+  for (let i = 0; i <= 17; i += 1) {
+    // Set new drink price
+    let response = await contract.setDrinkPrice(i, 10n ** 16n);
+    await response.wait();
+    response = await contract.menu(i);
+    console.log(`Updated price for item ${i} is: ${response}`);
+  }
 }
