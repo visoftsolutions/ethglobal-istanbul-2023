@@ -1,3 +1,10 @@
+export const zksyncTheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2";
+export const arbitrumTheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2";
+export const TheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2";
+export const scrollTheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2";
+export const baseTheGraphUrl = "https://api.studio.thegraph.com/query/58578/subgraph-zksync/v0.0.2";
+
+
 export const getNewEvents = async (supabase) => {
   const { data, error } = await supabase
     .from("events")

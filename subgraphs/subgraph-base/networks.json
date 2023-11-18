@@ -1,0 +1,8 @@
+{
+  "base-testnet": {
+    "DeepShot": {
+      "address": "0x8b1f0d0b8a0a6ddcb0b64e065906d3a0c85e2807",
+      "startBlock": 0
+    }
+  }
+}
