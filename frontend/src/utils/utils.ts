@@ -45,3 +45,21 @@ export const getDrinkPrice = async (
   const value = await contract.menu([drinkId])
   return ethers.utils.formatEther(value)
 }
+
+export const Networks = Object.freeze({
+  1: {id: 1, name: "Ethereum"},
+  2: {id: 2, name: "Arbitrum"},
+  3: {id: 3, name: "ZkSync"},
+  4: {id: 4, name: "Celo"},
+  5: {id: 5, name: "Cartesi"},
+  6: {id: 6, name: "Gnosis"},
+});
+
+export const Drinks = Object.freeze({
+  1: {id: 1, name: "RedSun"},
+  2: {id: 2, name: "SkyHigh"},
+  3: {id: 3, name: "GoldRush"},
+  4: {id: 4, name: "Frostbite"},
+  5: {id: 5, name: "OakSour"},
+  6: {id: 6, name: "ZenMix"},
+});
