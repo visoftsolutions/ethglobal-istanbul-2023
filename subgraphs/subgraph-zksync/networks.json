@@ -1,0 +1,8 @@
+{
+  "zksync-era-testnet": {
+    "DeepShot": {
+      "address": "0x999B33B6D84B427B67D4A3D3806A879a2c1f162e",
+      "startBlock": 13678127
+    }
+  }
+}
