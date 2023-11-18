@@ -1,0 +1,8 @@
+{
+  "scroll-sepolia": {
+    "DeepShot": {
+      "address": "0xa460ab650ea359a6bab7a7c1d2669389b124acb7",
+      "startBlock": 2304327
+    }
+  }
+}
