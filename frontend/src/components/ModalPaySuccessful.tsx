@@ -1,5 +1,7 @@
-import { FaCheck } from "react-icons/fa";
+"use client";
+
 import { ModalTemplate } from "./ModalTemplate";
+import { FaCheck } from "react-icons/fa";
 
 interface Props {
   isOpen: boolean;
@@ -7,21 +9,23 @@ interface Props {
   setStep: any;
 }
 
-export const ModalBraceletConnected = ({
+export const ModalPaySuccessful = ({
   isOpen,
   setIsOpen,
-  setStep,
+  setStep
 }: Props) => {
   setTimeout(() => {
-    setStep(3);
-  }, 5000);
+    setStep(1);
+    setIsOpen(false);
+  }, 3000);
 
+  
   return (
     <ModalTemplate
       isOpen={isOpen}
       setIsOpen={setIsOpen}
-      title="Configuration Complete"
-      description={"Your bracelet has been successfully configured."}
+      title="Payment Complete"
+      description={"Your payment was completed successfully."}
     >
       <FaCheck size={64} className="mx-auto" />
     </ModalTemplate>

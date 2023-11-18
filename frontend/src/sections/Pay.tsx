@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Order } from "@/utils/utils";
 import { createClient } from "@supabase/supabase-js";
 import { ModalPay } from "@/components/ModalPay";
+import { ModalPaySuccessful } from "@/components/ModalPaySuccessful";
 
 const supabase = createClient(
   "https://jshhojuqmzdfjaxvwqiw.supabase.co",
@@ -17,6 +18,7 @@ export const Pay = () => {
   const [currentOrder, setCurrentOrder] = useState<Order | undefined>();
 
   const [isOpen, setIsOpen] = useState(false);
+  const [step, setStep] = useState(1);
 
   // Handle upcoming orders
   useEffect(() => {
@@ -36,13 +38,15 @@ export const Pay = () => {
     };
   }, []);
 
+  console.log(orders, !isFlowOngoing, currentOrder, step);
+
   useEffect(() => {
+    console.log('orders.length', orders.length);
     if (orders.length > 0 && !isFlowOngoing) {
-      async () => {
-        setIsOpen(true);
-        setIsFlowOngoing(true);
-        setCurrentOrder(orders[0]);
-      };
+      setIsOpen(true);
+      setIsFlowOngoing(true);
+      setCurrentOrder(orders[0]);
+      setStep(1);
     }
   }, [orders, isFlowOngoing]);
 
@@ -69,13 +73,14 @@ export const Pay = () => {
             id: "123",
             created_at: "123",
           });
+          setStep(1);
         }}
         className="px-4 py-2 bg-red-500 text-white font-bold"
       >
         Click here
       </button>
 
-      {isFlowOngoing && currentOrder && (
+      {step === 1 && isFlowOngoing && currentOrder && (
         <ModalPay
           isOpen={isOpen}
           setIsOpen={setIsOpen}
@@ -84,11 +89,10 @@ export const Pay = () => {
           orders={orders}
           setOrders={setOrders}
           networkId={currentOrder.network_id}
+          setStep={setStep}
         />
       )}
-      {/* {step === 2 && (<ModalBraceletConnected isOpen={isOpen} setIsOpen={setIsOpen} setStep={setStep} />)} */}
-      {/* {address && step === 3 && (<ModalInfoForm address={address} braceletAddress={braceletWalletAddress} isOpen={isOpen} setIsOpen={setIsOpen} />)} */}
-      {/* {step === 4 && (<ModalThankYou isOpen={isOpen} setIsOpen={setIsOpen} />)} */}
+      {step === 2 && (<ModalPaySuccessful isOpen={isOpen} setIsOpen={setIsOpen} setStep={setStep} />)}
     </div>
   );
 };

@@ -16,6 +16,7 @@ interface Props {
   orders: Order[];
   setOrders: any;
   networkId: NetworkId;
+  setStep: any;
 }
 
 export const ModalPay = ({
@@ -25,7 +26,8 @@ export const ModalPay = ({
   setIsFlowOngoing,
   orders,
   setOrders,
-  networkId
+  networkId,
+  setStep
 }: Props) => {
   const [statusText, setStatusText] = useState("");
   const [txHash, setTxHash] = useState("");
@@ -98,7 +100,8 @@ export const ModalPay = ({
     setTimeout(() => {
       setIsFlowOngoing(false);
       removeOrder();
-    }, 5000);
+      setStep(2);
+    }, 3000);
   };
 
   const removeOrder = () => {
