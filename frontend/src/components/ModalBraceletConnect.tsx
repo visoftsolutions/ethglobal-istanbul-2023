@@ -40,7 +40,7 @@ export const ModalBraceletConnect = ({
     >
       <>
         <Image
-          src="/touch-bracelet.png"
+          src="/touch.png"
           alt="touch bracelet img"
           width={336}
           height={186}

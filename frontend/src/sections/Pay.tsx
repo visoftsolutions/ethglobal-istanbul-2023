@@ -65,7 +65,7 @@ export const Pay = () => {
           setIsFlowOngoing(true);
           setCurrentOrder({
             drink_id: 1,
-            network_id: 0,
+            network_id: 1,
             id: "123",
             created_at: "123",
           });
@@ -83,6 +83,7 @@ export const Pay = () => {
           setIsFlowOngoing={setIsFlowOngoing}
           orders={orders}
           setOrders={setOrders}
+          networkId={currentOrder.network_id}
         />
       )}
       {/* {step === 2 && (<ModalBraceletConnected isOpen={isOpen} setIsOpen={setIsOpen} setStep={setStep} />)} */}

@@ -6,7 +6,7 @@ import { execHaloCmdWeb } from "@arx-research/libhalo/api/web.js";
 import { haloConvertSignature } from "@arx-research/libhalo/api/common.js";
 import { useEffect, useState } from "react";
 import { UnsignedTransaction, ethers } from "ethers";
-import { Order, getUnsignedTx } from "@/utils/utils";
+import { NetworkId, Networks, Order, getUnsignedTx } from "@/utils/utils";
 
 interface Props {
   isOpen: boolean;
@@ -15,6 +15,7 @@ interface Props {
   setIsFlowOngoing: any;
   orders: Order[];
   setOrders: any;
+  networkId: NetworkId;
 }
 
 export const ModalPay = ({
@@ -24,6 +25,7 @@ export const ModalPay = ({
   setIsFlowOngoing,
   orders,
   setOrders,
+  networkId
 }: Props) => {
   const [statusText, setStatusText] = useState("");
   const [txHash, setTxHash] = useState("");
@@ -78,9 +80,9 @@ export const ModalPay = ({
     });
   };
 
-  const buyDrink = async (drinkId: number) => {
+  const buyDrink = async (drinkId: number, networkId: NetworkId) => {
     const provider = new ethers.providers.JsonRpcProvider(
-      "https://testnet.era.zksync.dev",
+      Networks[networkId].rpc
     );
     const rawTx = await getUnsignedTx(
       provider,
@@ -108,7 +110,7 @@ export const ModalPay = ({
   useEffect(() => {
     if (drinkId) {
       (async () => {
-        await buyDrink(drinkId);
+        await buyDrink(drinkId, networkId);
       })();
     }
   }, [drinkId]);
@@ -122,7 +124,7 @@ export const ModalPay = ({
     >
       <div className={"text-sm text-gray-300"}>{txHash}</div>
       <Image
-        src="/touch-bracelet.png"
+        src="/touch.png"
         alt="touch bracelet img"
         width={336}
         height={186}

@@ -5,7 +5,7 @@ export interface Order {
   id: string;
   created_at: string;
   drink_id: number;
-  network_id: number;
+  network_id: NetworkId;
 }
 
 export const getUnsignedTx = async (
@@ -39,17 +39,18 @@ export const getDrinkPrice = async (
   return ethers.utils.formatEther(value);
 };
 
-export const Networks = {
-  1: { id: 1, name: "Gnosis" },
-  2: { id: 2, name: "Arbitrum" },
-  3: { id: 3, name: "Linea" },
-  4: { id: 4, name: "zkSync" },
-  5: { id: 5, name: "Scroll" },
-  6: { id: 6, name: "Mantle" },
-  7: { id: 7, name: "Celo" },
-  8: { id: 8, name: "Base" },
-  9: { id: 9, name: "Cartesi" },
-};
+export type NetworkId = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+
+export const Networks = Object.freeze({
+  1: { id: 1, name: "Gnosis", rpc: "https://1rpc.io/gnosis" },
+  2: { id: 2, name: "Arbitrum", rpc: "https://rpc.goerli.arbitrum.gateway.fm	" },
+  3: { id: 3, name: "Linea", rpc: `https://linea-goerli.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}` },
+  4: { id: 4, name: "zkSync", rpc: "https://testnet.era.zksync.dev" },
+  5: { id: 5, name: "Scroll", rpc: "http://scroll-sepolia-rpc.01no.de:8545" },
+  6: { id: 6, name: "Mantle", rpc: "https://rpc.testnet.mantle.xyz" },
+  7: { id: 7, name: "Celo", rpc: "https://alfajores-forno.celo-testnet.org	" },
+  8: { id: 8, name: "Base", rpc: "wss://base-goerli.publicnode.com	" }
+});
 
 export const Drinks = {
   0: {
