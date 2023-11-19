@@ -3,7 +3,7 @@ import { supabase } from "@/utils/supabase";
 import { Drinks, Networks, Order } from "@/utils/utils";
 import { useEffect, useState } from "react";
 
-export const Leaderboard = () => {  
+export const Leaderboard = () => {
   const [orders, setOrders] = useState<Order[]>([]);
 
   // Query data on start
@@ -36,7 +36,6 @@ export const Leaderboard = () => {
     };
   }, [supabase]);
 
-
   function groupById(array: Order[]): Record<number, number> {
     return array.reduce((acc, obj) => {
       const key = obj.drink_id;
@@ -47,14 +46,13 @@ export const Leaderboard = () => {
         // @ts-ignore
         acc[key] = 0;
       }
-      
+
       // @ts-ignore
       acc[key] += 1;
 
       return acc;
     }, {});
   }
-
 
   return (
     <div className="flex flex-col gap-4 max-h-screen w-full">
@@ -66,7 +64,9 @@ export const Leaderboard = () => {
         <div className="w-full max-h-[900px] overflow-y-auto text-left block">
           <div className="flex w-full">
             <span className="flex-1 bg-gray-900 p-2">Name</span>
-            <span className="flex-1 bg-gray-900 p-2">Amount ordered so far</span>
+            <span className="flex-1 bg-gray-900 p-2">
+              Amount ordered so far
+            </span>
           </div>
 
           <div className="overflow-y-auto max-h-[500px] w-full flex flex-col">

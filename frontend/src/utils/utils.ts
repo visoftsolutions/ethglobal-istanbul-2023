@@ -60,7 +60,7 @@ export const Networks = Object.freeze({
   3: {
     id: 3,
     name: "Linea",
-    rpc: `https://linea-goerli.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}`,
+    rpc: `https://rpc.goerli.linea.build`,
     address: "0xad83c78433c3720fcd9e034ab64ac496b2aa62a1",
     chainId: 59140,
   },
@@ -74,7 +74,7 @@ export const Networks = Object.freeze({
   5: {
     id: 5,
     name: "Scroll",
-    rpc: "http://scroll-sepolia-rpc.01no.de:8545",
+    rpc: "https://rpc.ankr.com/scroll_sepolia_testnet",
     address: "0xa460ab650ea359a6bab7a7c1d2669389b124acb7",
     chainId: 534351,
   },

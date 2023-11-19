@@ -118,12 +118,12 @@ export const ModalPay = ({
   };
 
   useEffect(() => {
-    if (drinkId !== undefined) {
+    if (drinkId !== undefined && networkId !== undefined) {
       (async () => {
         await buyDrink(drinkId, networkId);
       })();
     }
-  }, [drinkId]);
+  }, [drinkId, networkId]);
 
   return (
     <ModalTemplate

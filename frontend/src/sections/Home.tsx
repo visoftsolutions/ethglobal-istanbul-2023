@@ -3,7 +3,7 @@ import { supabase } from "@/utils/supabase";
 import { Drinks, Networks, Order } from "@/utils/utils";
 import { useEffect, useState } from "react";
 
-export const Home = () => {  
+export const Home = () => {
   const [orders, setOrders] = useState<Order[]>([]);
 
   // Query data on start
@@ -39,15 +39,30 @@ export const Home = () => {
   function formatDate(d: string) {
     const date = new Date(d);
     const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
 
     const dayOfWeek = days[date.getDay()];
     const month = months[date.getMonth()];
     const year = date.getFullYear();
 
     // Formatting hours and minutes with leading zero if less than 10
-    const hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
-    const minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+    const hours =
+      date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+    const minutes =
+      date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
 
     return `${dayOfWeek} ${month} ${year}, ${hours}:${minutes}`;
   }
