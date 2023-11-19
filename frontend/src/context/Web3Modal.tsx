@@ -17,8 +17,8 @@ import {
 const projectId = "f211fb976e1d3c00908cc3e7f86501d5";
 
 const metadata = {
-  name: "DEEP SHOT",
-  description: "Shot your deep.",
+  title: "Degen Drink",
+  description: "Inspired by festive beverages and gourmet flavors [kebab].",
   url: "https://web3modal.com",
   icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
