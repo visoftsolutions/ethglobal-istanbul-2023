@@ -10,9 +10,7 @@ export const Home = () => {
   useEffect(() => {
     const getOrdersData = async () => {
       const { data, error } = await supabase.from("orders").select();
-
       if (error) console.log("getOrdersData", data, error);
-
       setOrders(data as Order[]);
     };
 
