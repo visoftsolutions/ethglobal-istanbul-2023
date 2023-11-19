@@ -47,7 +47,7 @@ export const Networks = Object.freeze({
     id: 1,
     name: "Gnosis",
     rpc: "https://1rpc.io/gnosis",
-    address: "",
+    address: "0xaD83c78433C3720fCD9E034Ab64Ac496B2AA62A1",
     chainId: 10200,
   },
   2: {
