@@ -19,7 +19,7 @@ const DrinksDefinitions = {
   17: { 0: 850, 1: 650, 2: 1000 },
 };
 
-export const Networks = Object.freeze({
+export const Networks = {
   1: {
     id: 1,
     name: "Gnosis",
@@ -76,7 +76,7 @@ export const Networks = Object.freeze({
     address: "",
     chainId: 84531,
   },
-});
+};
 
 export const Drinks = {
   0: {

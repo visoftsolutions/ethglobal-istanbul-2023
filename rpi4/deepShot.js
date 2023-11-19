@@ -45,7 +45,7 @@ export class DeepShot {
     }
   }
 
-  async switchSelection() {
+  switchSelection() {
     if (this.context === LcdContexts.Network) {
       this.network = getNextEnumValue(Networks, this.network);
     } else if (this.context === LcdContexts.Drink) {
