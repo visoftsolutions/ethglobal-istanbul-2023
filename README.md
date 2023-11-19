@@ -15,6 +15,7 @@
 - Base Sepolia: `0x8b1f0d0b8a0a6ddcb0b64e065906d3a0c85e2807`
 - Celo: `0xad83c78433c3720fcd9e034ab64ac496b2aa62a1`
 - Mantle: `0x8b1f0d0b8a0a6ddcb0b64e065906d3a0c85e2807`
+- Gnosis: `0xaD83c78433C3720fCD9E034Ab64Ac496B2AA62A1`
 
 ## 👥 Contributors
 
